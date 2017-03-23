@@ -37,7 +37,7 @@ OSHA<- filter(OSHA,!(ACCID_==0 & VIOLS_==0 & HAZSUB_==0))
 ### missing data is starting to cause problems with this data, we will need to get rid of all the 
 ### missing data we can not control. 
 
-
+head(OSHA)
 
 ####################################STEP 2 Cleaning up the ACCID file #######################################
 #############################################################################################################
@@ -139,12 +139,11 @@ FINALACCID[is.na(FINALACCID)] <- 0
 #rename columns
 colnames(FINALACCID)<- c("ACTIVITY_ID","COMPANY_NAME","COMPANY_ADDRESS","COMPANY_ZIP","TOTAL_ACC","ACC_DEG_1","ACC_DEG_2","ACC_DEG_3")
 
-#for analysis purposes, lets look at the top 30 companies with the most accidents
-TOPTENACC<-arrange(FINALACCID,desc(ACCID_))
-TOPTENACC<- TOPTENACC[1:30,]
+#for analysis purposes, lets arrange in descending order of total accidents(most accidents on top)
+FINALACCID<-arrange(FINALACCID,desc(TOTAL_ACC))
 
 
-
+head(FINALACCID)
 
 ####################################STEP 3 Cleaning up the VIOL file #######################################
 ############################################################################################################
@@ -183,17 +182,26 @@ rm(OSHAviol)
 FINALVIOL<-select(FINALVIOL,ACTIVITYNO,ESTABNAME,SITEADD,SITEZIP,TotalVIOLS,S,O,W,R,U)
 colnames(FINALVIOL)<- c("ACTIVITY_ID","COMPANY_NAME","COMPANY_ADDRESS","COMPANY_ZIP","TOTAL_VIOLS","SERIOUS_VIOLS","OTHER_VIOLS","WILLFULL_VIOLS","REPEATED_VIOLS","UNCLASSIFIED_VIOLS")
 
+#most violations
+FINALVIOL<-arrange(FINALVIOL,desc(TOTAL_VIOLS)) 
+head(FINALVIOL)
+
+#most Serious Violations
+FINALVIOL<-arrange(FINALVIOL,desc(SERIOUS_VIOLS))
+head(FINALVIOL)
 
 #lets check if all the accidents in step 2 have a entry for violation
 s<-(FINALACCID$ACTIVITY_ID %in% FINALVIOL$ACTIVITY_ID)
 d<-which(s==TRUE)
 #it looks like aproximately 300 out of the 1500 accidents do not have a violation. 
 #This table will join the compnaies that have both violations and accidents. 
+#it can be used for analysis
 
 ACCIDVIOL<- inner_join(FINALACCID,FINALVIOL)
 
+
 rm(VIOL)
-rm(OSHA)
+
 
 ######################################## STEP 4 GRAPHICS     #############################################################
 
@@ -226,6 +234,10 @@ test2<-arrange(test2,-test2$TOTAL_VIOLS)
 accibar<- test1[1:10,]
 require(ggplot2)
 ggplot(accibar)+aes(x=CITY,y=TOTAL_ACC)+geom_col()+coord_flip()
+
+#this bar plot shows the amount of accidents per city in the 10 cities with the most accidents
+#it is clear that Boston is one of the most dangerous places to work, but many factors could be affecting this 
+#like population, number of companies, ect...
 
 ######################################## UNDER CONSTRUCTION (trying to map) ###############################################
 ###########################################################################################################################
