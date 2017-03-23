@@ -225,7 +225,7 @@ test2<-arrange(test2,-test2$TOTAL_VIOLS)
 #barplot accidents
 accibar<- test1[1:10,]
 require(ggplot2)
-ggplot(accibar)+aes(x=CITY,y=TOTAL_ACC)+geom_col()
+ggplot(accibar)+aes(x=CITY,y=TOTAL_ACC)+geom_col()+coord_flip()
 
 ######################################## UNDER CONSTRUCTION (trying to map) ###############################################
 ###########################################################################################################################
