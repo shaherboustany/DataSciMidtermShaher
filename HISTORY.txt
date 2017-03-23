@@ -1,0 +1,92 @@
+HISTORY
+
+Segment layout and codes
+April 2004
+
+NAME		TYPE	LENGTH	DESCRIPTION	
+ACTIVITYNO	N	11	Unique identifier for each inspection record	
+
+SITESTATE	C	2	State flag	
+
+FTAINSP		N	11	Activity number of inspection in which FTA (failure-to-abate) assessed	
+
+FTAPEN		N	12	FTA penalty at the time current event/activity applied to record	
+
+HISTTYPE	C	1	Identifies whether date relates to a penalty or FTA	
+				P = Penalty	
+				F = Failure-To-Abate	
+
+CITID		C	7	Citation ID of violation applies to	
+
+HISTDATE	N	11	Occurrence date of activity/event applies to record	
+
+DATEHIST	D	8	NICAR-created using date format for field HISTDATE	
+
+HISTEVENT	C	1	Identifies source or cause of activity applied against violation/penalty record	
+				Z=Issued  	
+				Y=State Decision	
+				W=Employer Withdrew	
+				S=Unknown	
+				R=Review Commission
+				P=Petition to modify abatement
+				O=Unknown
+				N=Unknown
+				L=State Settlement
+				J=ALJ Decision
+				I=Informal Settlement
+				F=Formal Settlement
+				D=Govt Dismissed (withdrew citation)
+				A=Amendment
+				3=Supreme Court
+				2=Appeals Court
+				1=State Lower Court
+				0 (zero)=Unknown
+
+HISTPEN		N	12	Penalty at the time current activity/event applied to record
+
+HISTABDT	N	11	Current abatement date at time of event/activity
+
+DTHISTAB	D	8	NICAR-created using date format for field HISTABDT
+
+HISTVTYPE	C	1	Current violation type at time of event/activity
+				S = Serious
+				R = Repeat
+				W = Willful
+				O = Other
+				U = Unclassified    
+
+HISTACT	C	1	Identifies type of activity taken against record, i.e., modify or delete
+				A-Add
+				D-Delete
+				M-Modify
+				N-No change
+
+FTADATE		N	11	Occurrence date of activity/event applies to FTA record
+
+DATEFTA		D	8	NICAR-created using date format for field FTADATE
+
+FTAEVENT	C	1	Identifies source or cause of activity applied against FTA record
+				P-Petition to Modify Abatement
+				Z-Issued  
+				Y-State Decision
+				W-Employer Withdrew
+				T-Unknown
+				S-Unknown
+				R-Review Commission
+				P-Petition to modify abatement
+				L-State Settlement
+				J-ALJ Decision
+				I-Informal Settlement
+				F-Formal Settlement
+				D-Govt Dismissed (withdrew citation)
+				A-Amendment
+				3-Supreme Court
+				2-Appeals Court
+				1-State Lower Court
+
+FTAACT		C	1	Identifies type of activity applied against record, i.e. modify or delete
+				A-Add
+				D-Delete
+				G-Unknown
+				M-Modify
+				N-No change

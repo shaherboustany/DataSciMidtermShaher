@@ -1,0 +1,111 @@
+DEBT
+
+Segment layout and codes
+April 2005
+
+NAME		TYPE	LENGTH	DESCRIPTION		
+ACTIVITYNO	N	11	Unique identifier for each inspection record		
+
+SITESTATE	C	2	State flag		
+
+DEBTTYPE	C	1	Type of data contained in this record		
+				P=Penalty
+				F=Failure-to-Abate (FTA)
+				M=Miscellaneous Payment Plan or Solicitor Information and may refer to either penalty or FTA)
+
+WAIVED		C	1	Assessed penalty or FTA waived		
+				b = Not Waived		
+				A = Penalty/FTA waived by Area Office 		
+				B = Penalty/FTA waived by Solicitor/RA		
+				D = Penalty/FTA waived by National Office(N.O.)		
+
+WA_REASON	C	1	Why penalty/FTA waived		
+				A = statue past for collection		
+				B = Bankruptcy files		
+				C = settlement/not sent to Credit Bureau		
+				D = Total due less than $100
+				E = Out of Business
+				F = Waived By N.O.    
+				L = Unable to locate creditor
+				S = OSHA SOLicitor discretion
+				U = Uncollectible
+
+REFDATE		N	11	Date case referred to N.O. for debt collection
+
+DATEREF		D	8	NICAR-created using date format for field REFDATE
+
+INT		N	12	Penalty/FTA interest assessed by N.O.
+
+DLQ		N	12	Penalty/FTA delinquent fees assessed by N.O.
+
+DCA_SEND	N	11	Date sent by Debt Collection Agency (DCA)
+
+SEND_DCA	D	8	NICAR-created using date format for field DCA_SEND
+
+DCA_RET		N	11	Date case returned from DCA
+
+RET_DCA		D	8	NICAR-created using date format for field DCA_RET
+
+DCA_REC		C	1	Reason case returned from DCA
+				F = Paid in full
+				L = Litigation         
+				P = Partial Payment
+				W = Waived
+
+DCA_LITIG	N	4	DCL additional litigation credit report charges
+
+DCA_FEE		N	12	Fees charged and collected by DCA
+
+ARCHIVED	C	1	Case archived: blank = no,  X = yes
+
+DCA_INT		N	12	Interested assessed by DCA
+
+DCA_DLQ		N	12	Delinquent fees assessed by DCA
+
+DFO_SEND	N	11	Date case sent back to Area/Regional Office for additional review
+
+SEND_DFO	D	8	NICAR-created using date format for field DFO_SEND
+
+DFO_RET		N	11	Date case returned from Area/Regional office
+
+RET_DFO		D	8	NICAR-created using date format for field DFO_RET
+
+DFO_REC		C	1	Reason case returned to Area/Regional Office from N.O.
+				C = Returned due to late contest
+				R = Erroneously referred
+				W = Waived
+				L = Litigate
+
+AO_SEND		N	11	Date sent to Area Office after completion of N.O. debt collection activities
+
+SEND_AO		D	8	NICAR-created using date format for field AO_SEND
+
+CB_SEND		N	11	Date information sent to Credit Bureau regarding non-payment of penalities and assessments
+
+SEND_CB		D	8	NICAR-created using date format for field CB_SEND
+
+IRS_SEND	N	11	Date information sent to IRS regarding non-payment of penalities and assessments
+
+SEND_IRS	D	8	NICAR-created using date format for field IRS_SEND
+
+CB_RET		N	11	Date negative history information recalled back from Credit Bureau
+
+RET_CB		D	8	NICAR-created using date format for field CB_RET
+
+NEXT_DATE	N	11	Date next installment on payment plan due
+
+DATE_NEXT	D	8	NICAR-created using date format for field NEXT_DATE
+
+LAST_DATE	N	11	Date last installment on payment plan fue
+
+DATE_LAST	D	8	NICAR-created using date format for field LAST_DATE
+
+SOL_DATE	N	11	Date case referred to the Solicitor
+
+DATE_SOL	D	8	NICAR-created using date format for field SOL_DATE
+
+SOL_REASN	C	1	Reason case referred to Solicitor
+				C = Penalty Collection
+				D = Hazard Abatement
+
+CASE_HOLD	C	1	Case held at National Office (internal use only)

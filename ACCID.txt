@@ -1,0 +1,57 @@
+ACCIDENT
+
+Segment layout and codes
+April 2005
+
+
+NAME			TYPE	LENGTH	DESCRIPTION
+
+
+ACTIVITYNO		N	11		Unique identifier for each inspection record
+
+SITESTATE		C	2		State flag
+
+NAME			C	20		Name of victim
+
+RELINSP			C	11		Inspection activity number
+
+SEX			C	1		Gender of victim
+							Codes:
+							M = male
+							F = female
+
+AGE			N	4		Age of victim
+
+DEGREE			C	1		Extent of injury
+							Codes:
+							1 = fatality
+							2 = hospitalized injury
+							3 = non-hospitalized injury
+
+NATURE			C	2		Nature of injury (see ACC.DBF lookup for codes)
+
+BODYPART		C	2		Part of body (see ACC.DBF lookup for codes)
+
+SOURCE			C	2		Source of injury (see ACC.DBF lookup for codes)
+
+EVENT			C	2		Event type (see ACC.DBF lookup for codes)
+
+ENVIRON			C	2		Contributing factor (see ACC.DBF lookup for codes)
+
+HUMAN			C	2		Human factor (see ACC.DBF lookup for codes)
+
+TASK			C	1		Task assigned (Task working on at time of incident)
+							Codes:
+							1 = regularly assigned task 
+							2 = task other than regularly assigned
+
+HAZSUB			C	4		Hazardous substance contributing to incident (see
+						HZX.DBF lookup for codes)
+
+OCC_CODE		C	3 		Occupation code (for state use only) (see OCC.DBF
+						layout for codes)
+
+
+
+
+

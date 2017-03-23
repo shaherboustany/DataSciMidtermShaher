@@ -1,0 +1,40 @@
+HAZARDOUS SUBSTANCE
+Segment layout and codes
+April 2005
+
+
+
+NAME			TYPE	LENGTH		DESCRIPTION
+
+
+ACTIVITYNO		N	11			Unique identifier for each inspection
+
+SITESTATE		C	2			State flag
+
+CIT_NO			C	2			Citation number
+
+ITEMNR			C	2			Monotonically increasing item number
+
+ITEMGRP			C	2			Grouped item id.
+								Codes:
+								BB = Non-grouped violation
+								AB = Primary item of grouped
+violation
+								BB - ZB = Members of grouped
+violation
+
+HAZSUB1			C	4			The substance code(s) for all substances
+							directly related to item sited. Up to
+							five codes may be entered. If more than
+ 							five substances are present, the five
+ 							with the highest exposure levels are
+ 							listed. (see HZS.DBF lookup for codes)
+							This description applies for fields HAZSUB1 through HAZSUB5.
+
+HAZSUB2			C	4
+
+HAZSUB3			C	4
+
+HAZSUB4			C	4
+
+HAZSUB5			C	4

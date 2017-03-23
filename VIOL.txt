@@ -1,0 +1,201 @@
+VIOLS
+Segment layout and codes
+April 2005
+
+
+NAME		TYPE	LENGTH	DESCRIPTION
+
+ACTIVITYNO	N	11		Unique identifier for each inspection record
+
+SITESTATE	C	2		State flag
+
+DELETE		C	1		Delete flag, violation deleted for reason other than error in
+					submission of data
+
+ISSUANCE	N	11		Date citation issued by area director
+
+ISSUEDATE	D	8		NICAR-converted version of ISSUANCE
+
+CITATION	C	2		Citation number (this is first part of unique violation
+					identification key)
+
+ITEMNO		C	3		Monotonically increasing item number (second part of unique
+					ID key)
+
+ITEMGROUP	C	2		Grouped item ID (third part of unique ID key)
+						Codes:
+						BB = non-grouped item
+						AA - ZB = grouped items
+
+EMPHASIS	C	1		Value = X if case is egregious
+
+GRAVITY		C	1		Indicates the level of potential harm to worker(s), values B, 
+					1-10
+
+PENCURRENT	N	12		Total amount OSHA collected or expects to collect
+
+PENINITIAL	N	12		Initial assessed penalty amount
+
+VIOLTYPE	C	1		Current type of violation
+						Codes:
+						O = other
+						R = repeat
+						S = serious
+						U = unclassified
+						W = willful
+
+VIOLTYPEA	C	1		Initial assess violation type
+
+STD_LOOKUP	C	12		Reformated STD for use with STD.dbf lookup
+
+STD		C	22		Federal or state standard cited
+
+ABATE		N	11		Violation abatement date
+
+DATE_ABATE	D	8		NICAR-converted version of ABATE
+
+ABATEDT		N	11		Date abatement verified
+
+ABATEDT2	D	8		NICAR-created conversion of ABATEDT
+
+
+INSTANCES	N	6		Number of instances of violation of standard related event
+Code
+
+REC		C	1		Related event code
+						Codes:
+						A = FAT/CAT (fatality/catastrophe), accident
+						B = 
+						C = complaint
+						D = 
+						F = 
+						I = imminent danger
+						R = related event code
+						S =
+						V = variance
+
+NUMEXPOSED	N	6		Number of employees exposed to hazard violated
+
+ABATEDONE	C	1		Code indicating status of hazard
+						Codes:
+						X = abatement, PPE, report completed
+						E = abatement, PPE, plan, report not completed,
+							employer out of business
+						W = abatement, PPE, plan, report not completed,
+							worksite changed
+						S = abatement, PPE, plan, report not complete, ad
+							discretion
+						N = national indicator (older files)
+						I = abatement completed immediately upon receipt of
+							citation
+						Q = quick fix (fixed during the walkaround)
+						A = abatement, PPE, plan, report not completed, ad
+							Discretion
+
+VIOLATION CONTESTED INFORMATION:
+
+ERCONTDT	N	11		Earliest contest date
+
+ERCNDATE	D	8		NICAR-converted version of ERCONTDT
+
+VIOLCONT	C	1		Violation contested
+						Codes:
+						B (blank) = no
+						X = yes
+
+PENCONT		C	1		Penalty contested	
+						Codes:
+						B (blank) = no
+						X = yes
+
+EMPRCONT	C	1		Employer contests abatement date
+						Codes:
+						B (blank) = no
+						X = yes
+
+EMPECONT	C	1		Employee contests abatement date
+						Codes:
+						B (blank) = no
+						X = yes
+
+FINORDT		N	11		Date the citation became a final order
+
+FINORDATE	D	8		NICAR-converted version of FINORDT
+
+PMA		C	1		Petition to modify abatement approved
+						Codes:
+						B (blank) = no
+						X = yes
+
+AMENDED		C	1		Citation amended prior to contest
+						Codes:
+						B (blank) = no
+						X = yes
+
+ISA		C	1		Disposition of contested violation
+						Codes:
+						B (blank) = no
+						X = yes
+
+DISPEVT		C	1		Disposition of contested violation
+						Codes:
+						W = employer withdrew contest
+						D = government dismissed case
+						L = state-settlement at admin. Level
+						Y = state-decision at admin. Level
+						F = formal settlement agreement
+						J = administrative law judge decision
+						R = review commission decision
+						1 = state-lower
+						2 = appeals court decision
+						3 = supreme court decision
+
+FAILURE TO ABATE SEGMENT:
+
+FTAINSP		N	11		Activity number of inspection issued
+
+FTAPEN		N	12		Additional penalties issued for FTA
+
+ISSUDT		N	11		Failure-to-abate issuance date
+
+FTA_ISDT	D	8		NICAR-converted version of ISSUDT
+
+CONTDT		N	11		Failure-to-abate contest date
+
+CONTDATE	D	8		NICAR-converted version of CONDT
+
+FTA_AMN		C	1		FTA amended prior to contest
+						Codes:
+						B (blank) = no
+						X = yes
+
+FTA_ISA		C	1		Informational settlement agreement for FTA
+						Codes:
+						B (blank) = no
+						X = yes
+
+FTA_DISP	C	1		Disposition of contested violation
+						Codes:
+						W = employer withdrew contest
+						D = government dismissed case
+						L = State-settlement at admin. Level
+						Y = state-decision at admin. Level
+						F = formal settlement agreement
+						J = administrative law judge decision
+						R = review commission decision
+						1 = state-lower
+						2 = appeals court decision
+						3 = supreme court decision
+						T = 
+						P = 
+
+FTA_FIN		N	11		Date the FTA citation became a final order
+
+FTAFINDT	D	8		NICAR-converted version of FTA_FIN
+
+HAZCAT		C	10		Hazardous category
+
+
+
+
+						

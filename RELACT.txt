@@ -1,0 +1,26 @@
+RELACT
+Table layout and codes
+April 2005
+
+NAME		TYPE	LENGTH	DESCRIPTION
+ACTIVITYNO	N	11	Unique identifier for each inspection record
+
+SITESTATE	C	2	State flag
+
+ITEMNR		C	2	Related activity item number (which might include one of the following types)
+
+RELTYPE		C	1	Type of related activity
+				A = Accident (FAT/CAT)
+				C = Complaint
+				I = Inspection
+				R = Referral
+
+ACTNR		N	11	Activity number of related activity (if it is an inspection, you can link back to the ACTIVITYNO of the other inspection[s])
+
+SAFETY		C	1	All safety hazards for complaint/referral are satisfied
+			blank=No
+			X=Yes
+
+HEALTH		C	1	All health hazards for complaint/referral are satisfied
+			blank=No
+			X=Yes

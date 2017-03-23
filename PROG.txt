@@ -1,0 +1,18 @@
+PROG
+Table layout and codes
+April 2005
+
+NAME	TYPE	LENGTH	DESCRIPTION
+
+ACTIVITYNO	N	11	Unique identifier for each inspection record
+
+SITESTATE	C	2	State flag
+
+PROGCODE	C	1	Local/National Special Emphasis Program
+				L=Local
+				N=National
+				S=Special Emphasis
+
+PROGTEXT	C	25	See lookups NEPTABLE.DBF (national) and LEPTABLE.DBF (local)
+				You can find additional information about some programs at 
+				http://www.osha.gov/dcp/neps/nep-programs.html or by contacting a local OSHA office

@@ -1,0 +1,44 @@
+ADMPAY
+
+Segment layout and codes
+April 2005
+
+NAME		TYPE	LENGTH	DESCRIPTION			
+ACTIVITYNO	N	11	Unique identifier for each inspection record		
+
+SITESTATE	C	2	State flag		
+
+APTYPE		C	1	Administrative fee or payment type
+				ADMinistrative fee types		
+				1 thru 9=Dunning Letter
+				M & N=National Office Letter
+				I=Penalty Interest
+				D=Penalty Delinquency fee
+				F=FTA Interest
+				G=FTA Delinquency Fee
+				O=Other Fees
+						
+				PAYment types		
+				P=Payment
+				R=Refund
+				U=Unhonored check  
+				C=Court Costs
+ADMDATE		N	11	Action date for activity, i.e., letter sent, interest calculated or delinquent fees assessed
+	
+DATEADM		D	8	NICAR-created field in date format for ADMDATE		
+
+ADMAMT		N	12	Administrative assessments applied to record		
+
+PAYDATE		N	11	Date payment received and form completed		
+
+DATEPAY		D	8	NICAR-created field in date format for PAYDATE		
+
+PENAMT		N	12	Amount of payment received for assessed penalties		
+
+FTAAMT		N	12	Amount of payment received for failure-to-abate charge		
+
+PAY163		N	11	Unique payment document number		
+
+PAYORG		C	1	Pay origin		
+
+PAYBAL		C	1	Pay balance		

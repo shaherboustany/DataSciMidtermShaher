@@ -1,0 +1,357 @@
+OSHA INSPECTION
+Table layout and codes
+April 2005
+
+
+
+NAME		TYPE	LENGTH	DESCRIPTION
+
+
+
+CONTFLAG	C	1		Indicates whether record is a continuation of the previous record (occurs primarily when large numbers of proposed violations are issued during an inspection).
+						Codes:
+						B (blank) = no
+						1 = first record of continuation group
+						2-9 = remaining members of continuation group
+
+HISTFLAG	C	1		Identifies the entry source and era of the record.
+						Codes:
+						H = historical (7/72-3/84)
+						B = IMIS (after 3/84)
+						P = entered on IV-Phase
+						X/T = entered on-line
+						M = entered on micro
+
+INSPECTION DATA INFORMATION:
+
+OSHA1MOD	C	11		Latest date activity applied against record.
+
+MOD_DATE	D	8		NICAR-converted version of OSHA1MOD.
+
+STFLAG		C	1		Indicates whether inspection was done by a federal or state
+					compliance official. About half of all inspections are conducted by states.
+						Codes:
+						B (blank) = federal 
+						S = state
+
+PREVACTNO	C	11		Unique OSHA number for this inspection
+
+PREVCTTYP	C	1		The type of the most recent OSHA activity, if any.
+						Codes:
+						A = accident (FAT/CAT -fatality/catastrophe)
+						B (blank) = no activity
+						C = complaint
+						I = inspection
+						R = referral
+
+ACTIVITYNO	C	11		Unique identifier for each inspection record.
+
+REPORTID	C	7		Unique identification code, one for each federal and state
+					office submitting compliance data.
+						Codes:
+						111-499 = federal area office
+						500-599 = state 18(b) office
+
+CSHO_ID		C	1		Composite, unique identification code of primary compliance
+					officer conducting the inspection. (Note: this field is totally blank, OSHA has expunged the data)
+
+JOBTITLE	C	1		The job classification of primary compliance officer
+					conducting the inspection.
+						Codes:
+						A = area director
+						C = safety officer
+						I = health officer
+						L = safety trainee
+						M = health trainee
+						N = national office management
+						O = area office support staff
+						P = compliance program manager
+						R =
+						S = supervisor
+						T = safety and health technician
+						U = area office analyst
+						V = discrim. invest'r
+						W = regional mgt.
+						X = regional FSO
+						Y = regional tech. supp.
+						Z = regional management
+
+OPTREPTNO	C	9		Designated for local usage. History: old MIS area code and
+					report number.
+
+ESTABNAME	C	30		Name of establishment
+
+SITEADD		C	30		Street address
+
+SITESTATE	C	2		State
+
+SITEZIP		C	5		Zip
+
+SITECITY	C	4		Department of Commerce city code (see SCC.DBF)
+
+SITECNTY	C	3		Department of Commerce county code (see SCC.DBF)
+
+DUNSNO		C	9		Dun and Bradstreet number
+
+HOSTESTKEY	C	17		Area office unique establishment identifier (used as a kind of
+					unique identification scheme; started using in the federal data recently)
+						
+OWNERTYPE	C	1		Type of owner
+						Codes:
+						A = private
+						B = local government
+						C = state government
+						D = federal government
+
+OWNERCODE	N	6		Agency code for owner-type = D only (see FDA.dbf)
+
+ADVNOTICE	C	1		Advance notice given
+						Codes:
+						N = no
+						Y = yes
+
+OPENDATE	N	11		Date of opening conference or entry or attempted entry into
+					the site of the inspection.
+
+OPENDT		D	8		NICAR-converted version of OPENDATE
+
+CLOSEDATE	N	11		Date of last closing conference held before issuing citations or
+					exit from the inspection site.
+
+CLOSEDT		D	8		NICAR-converted version of CLOSEDATE
+
+CAT_SH		C	1		CODES:
+					S = safety
+					H = health
+
+SIC		C	4		Standard industrial classification (see SIC.DBF)
+
+CATSICGDE	C	4		SIC found in the planning guide for the establishment
+
+
+CATSICINSP	C	4		SIC inspected if different from primary SIC
+
+NAICS		C	6		North American Industry Classification System (See NAICS.DBF)
+
+NAICSSEC	C	6		Secondary NAICS  
+
+NAICSIN		C	6		NAICS inspected if different from primary NAICS
+
+INSPTYPE	C	1		Inspection type
+						Codes:
+						Unprogrammed
+						A = fatality/catastrophe (FAT/CAT)
+						B = complaint
+						C = referral
+						D = monitoring
+						E = variance
+						F = follow-up
+						G = related
+						J = other
+						Programmed
+						H = planned
+						I = related
+						K = other
+						L = non-inspection
+
+INSPSCOPE	C	1		Inspection scope
+						Codes:
+						A = comprehensive
+						B = partial
+						C = records only
+						D = No inspection
+
+EMPCOUNT	N	4		Maximum number of people employed at site during previous
+					12 months
+
+EMPCOVERED	N	4		Number of employees affected by inspection
+
+NATEMPCNT	N	4		Number of employees controlled by employer  nationally
+
+WALKAROUND 	C	1		Employee representative present during inspection
+						Codes:
+						B (blank) = no
+						X = yes
+
+INTRVIEWD	C	1		Employee(s) interviewed during inspection (state only)
+						Codes:
+						B (blank) = no
+						X = yes
+
+UNION		C	1		Employees represented by union
+						Codes:
+						N = no
+						Y = yes
+
+CLOSECASE	C	1		Codes:
+					B (blank) = no
+					X = yes
+
+WHYNOINSP	C	1		If no inspection, INSPSCOPE = D
+						Codes:
+						A = establishment not found
+						B = Employer out of business
+						C = Process to be inspected not active
+						D = ten or fewer employees
+						E = denied entry
+						F = SIC	not on planning guide
+						G = worksite exempt through voluntary program
+						H = non-exempt consultation in progress
+						I = other reason
+
+CLOSEDATE2	N	11		Optional entry, date which no further case activity will occur
+
+CLOSEDT2	D	8		NICAR-converted version of CLOSEDATE2
+
+
+
+INSPECTION CLASSIFICATION INFORMATION:
+(Indicates if safety or health planning guide or emphasis/special program pertains to inspection)
+
+
+SAFETYMANF	C	1		Safety manufacturing inspection
+						Codes:
+						B (blank) = no
+						X = yes
+
+SFTYCONST	C	1		Safety construction inspection
+						Codes:
+						B (blank) = no
+						X = yes
+
+SFTYMARIT	C	1		Safety maritime inspection
+						Codes:
+						B (blank) = no
+						X = yes
+
+HELTHMANF	C	1		Health manufacturing inspection 
+						Codes:
+						B (blank) = no
+						X = yes
+
+HELTHCONST	C	1		Health construction inspection
+						Codes:
+						B (blank) = no
+						X = yes
+
+HELTHMARIT	C	1		Health maritime inspection
+						Codes:
+						B (blank) = no
+						X = yes
+
+MIGRANT		C	1		Inspection of migrant farm worker camp
+						Codes:
+						B (blank) = no
+						X = yes
+
+
+
+DENIAL OF ENTRY INFORMATION:
+
+ANTCSRVD	C	1		Warrant served on subpoena prior to start of inspection
+						Codes:
+						B (blank) = no
+						X = yes
+
+FRSTDENY	N	11		Date of initial denial of entry
+
+FRST_DT		D	8		NICAR-converted version of FRSTDENYN
+
+LSTREENTR	N	11		Date compliance officer re-entered establishment inspection
+					after first or second denial of entry.
+
+LSTR_DT		D	8		NICAR-converted version of LSTREENTRN
+
+LWDIRATE	N	4		Bureau of Labor Statistics lost workday injury rate
+
+SHPGM		C	1		Safety/Health program initiated as result of an 
+					Informal Settlement Agreement:	
+					b = No	
+					Y = Yes.
+
+DATARQD		C	1		200 log data required per ISA
+					CODES:
+					0 =
+					1 = 
+					2 =
+					3 =
+				
+
+DEBT COLLECTION INFORMATION:
+
+PENDUDATE	N	11		Penalties due date
+
+PENDUDT		D	8		NICAR-converted version of PENDUDATE
+
+FTADUDATE	N	11		Date failure-to-abate penalties are due
+
+FTADUDT		D	8		NICAR-converted version of FTADUDATE
+
+DUECODE		C	1		Code indicating source of PENDUDATE
+						Codes:
+						B = no due date
+						N = date set to 9/1/85 by national office
+						D = date set by the field - submitted on OSHA 167-L
+						R = when R event code on OSHA 166-L,
+							PENDUDATE = final order date + 60 days
+						J = when J event code on OSHA 166-L,
+							PENDUDATE = final order date + 90 days
+						F = final order date entered on OSHA 166-L
+						I = citation issuance; date + 20 days
+						A = informal settlement date + 20 days
+						2 =
+
+PAPREP		N	6		Time spent preparing for an inspection
+
+PATRAVEL	N	6		Time spent traveling to and from an inspection
+
+PAONSITE	N	6		Time spent in establishment or at job site
+
+PATECHSUPP	N	6		Time spent providing employer abatement assistance
+
+PARPTPREP	N	6		Time spent researching and completing the case file
+
+PAOTHRCNF	N	6		Time spent in all off-site case-related conferences
+
+PALITIGTN	N	6		Time spent preparing case for court and testifying
+
+PADENIAL	N	6		Time spent on all denial activity from initial denial to re-entry or closing of case
+
+PASUMHOURS	N	11		Sum of all inspection activity hours reported
+
+FRSTCONTST	N	11		Earliest date of contest received
+
+FRSTCONDT	D	8		NICAR-converted version of FRSTCONTST
+
+PENREMIT	N	12		Total remitted penalty dollars
+
+FTAREMIT	N	12		Total FTA penalty dollars remitted
+
+TOTPENLTY	N	12		Total current penalties issued
+
+TOTALFTA	N	12		Total FTA penalties issued
+
+TOTALVIOLS	N	6		Total number of violations issued
+
+TOTSERIOUS	N	6		Total number of serious, willful, and repeat violations issued						for inspection
+
+
+THE REMAINING FIELDS ARE COUNTS FOR HOW MANY RECORDS SHOULD BE IN THE OTHER TABLES.
+
+PROG_		N	4		Number of records that should be in PROG.DBF for this inspection
+
+RELACT_		N	4		Number of records that should be in RELACT.DBF for this inspection
+
+OPTINFO_	N	4		Number of records that should be in OPTINFO.DBF for this inspection
+
+DEBT_		N	4		Number of records that should be in DEBT.DBF for this inspection
+
+VIOLS_		N	6		Number of records that should be in VIOLS.DBF for this inspection
+
+EVENT_		N	6		Number of records that should be in HISTORY.DBF for this inspection
+
+HAZSUB_		N	4		Number of records that should be in HAZSUB.DBF for this inspection
+
+ACCID_		N	4		Number of records that should be in ACCID.DBF for this inspection
+
+ADMPAY_		N	6		Number of records that should be in ADMPAY.DBF for this inspection
